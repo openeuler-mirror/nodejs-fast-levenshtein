@@ -1,0 +1,22 @@
+diff --git a/test/tests.js b/test/tests.js
+index 54b9222..49628c5 100644
+--- a/test/tests.js
++++ b/test/tests.js
+@@ -108,7 +108,7 @@ var text1 = fs.readFileSync(__dirname + '/text1.txt', 'utf-8'),
+ 
+ exports['Async'] = {
+   'no progress callback': function(done) {
+-    this.timeout(20000);
++    this.timeout(40000);
+ 
+     var startTime = new Date().valueOf();
+ 
+@@ -124,7 +124,7 @@ exports['Async'] = {
+     });
+   },
+   'with progress callback': function(done) {
+-    this.timeout(20000);
++    this.timeout(40000);
+ 
+     var percents = [];
+     var progress = function(percent) {
