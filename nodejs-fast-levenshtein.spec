@@ -3,7 +3,7 @@
 %global enable_tests 1
 Name:		nodejs-fast-levenshtein
 Version:	1.1.3
-Release:	1
+Release:	2
 Summary:	Efficient implementation of Levenshtein algorithm
 License:	MIT
 URL:		https://github.com/hiddentao/fast-levenshtein
@@ -21,7 +21,7 @@ Efficient implementation of Levenshtein algorithm with asynchronous callback
 support.
 
 %prep
-%autosetup -n fast-levenshtein-%{version} -S git
+%autosetup -n fast-levenshtein-%{version} -p1
 
 %build
 %{_bindir}/uglifyjs levenshtein.js -o levenshtein.min.js
@@ -48,5 +48,8 @@ cp -pr package.json *.js \
 %{nodejs_sitelib}/%{packagename}
 
 %changelog
+* Web 09 Jun 2021 zhaoyao<zhaoyao32@huawei.com> - 1.1.3-2
+- %prep no longer patched with git
+
 * Fri Aug 21 2020 leiju <leiju4@huawei.com> - 1.1.3-1
 - Package init
